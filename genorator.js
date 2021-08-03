@@ -94,6 +94,19 @@ Blockly.Blocks['valueofinput'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['textcontent'] = {
+  init: function() {
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("Text")
+        .appendField(new Blockly.FieldTextInput("text"), "text");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 //define
 Blockly.JavaScript['extensionsetup'] = function(block) {
   var text_extensionname = block.getFieldValue('extensionname');
@@ -143,6 +156,15 @@ Blockly.JavaScript['string'] = function(block) {
 
 Blockly.JavaScript['valueofinput'] = function(block) {
   var text_valuename = block.getFieldValue('valuename');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['textcontent'] = function(block) {
+  var text_text = block.getFieldValue('text');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
