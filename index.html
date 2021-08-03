@@ -9,8 +9,8 @@
   <p>Next, here is your code:</p>
   <button onclick="var code = Blockly.JavaScript.workspaceToCode(workspace);document.getElementsByTagName('code')[0].innerHTML = code">Get Code!</button>
   <code></code>
-<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
-  <category name="Logic" colour="#5C81A6">
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="Logic" colour="#5b80a5">
     <block type="controls_if"></block>
     <block type="logic_compare">
       <field name="OP">EQ</field>
@@ -25,7 +25,7 @@
     <block type="logic_null"></block>
     <block type="logic_ternary"></block>
   </category>
-  <category name="Loops" colour="#5CA65C">
+  <category name="Loops" colour="#5ba55b">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -37,7 +37,7 @@
       <field name="MODE">WHILE</field>
     </block>
     <block type="controls_for">
-      <field name="VAR" id="w,m,[f{,h(Uq3U4g?tFm" variabletype="">i</field>
+      <field name="VAR" id="[,yQ!M(`.$|Vi5*Pb}Mb">i</field>
       <value name="FROM">
         <shadow type="math_number">
           <field name="NUM">1</field>
@@ -55,23 +55,28 @@
       </value>
     </block>
     <block type="controls_forEach">
-      <field name="VAR" id="/rrwo;%Nf0*Y+C|Y04if" variabletype="">j</field>
+      <field name="VAR" id="Xp~L8i62%t_tQXZ/S0L_">j</field>
     </block>
     <block type="controls_flow_statements">
       <field name="FLOW">BREAK</field>
     </block>
   </category>
-  <category name="Math" colour="#5C68A6">
-    <block type="math_round">
-      <field name="OP">ROUND</field>
-      <value name="NUM">
-        <shadow type="math_number">
-          <field name="NUM">3.1</field>
-        </shadow>
-      </value>
-    </block>
+  <category name="Math" colour="#5b67a5">
     <block type="math_number">
       <field name="NUM">0</field>
+    </block>
+    <block type="math_arithmetic">
+      <field name="OP">ADD</field>
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
     </block>
     <block type="math_single">
       <field name="OP">ROOT</field>
@@ -101,16 +106,11 @@
         </shadow>
       </value>
     </block>
-    <block type="math_arithmetic">
-      <field name="OP">ADD</field>
-      <value name="A">
+    <block type="math_round">
+      <field name="OP">ROUND</field>
+      <value name="NUM">
         <shadow type="math_number">
-          <field name="NUM">1</field>
-        </shadow>
-      </value>
-      <value name="B">
-        <shadow type="math_number">
-          <field name="NUM">1</field>
+          <field name="NUM">3.1</field>
         </shadow>
       </value>
     </block>
@@ -161,21 +161,15 @@
     </block>
     <block type="math_random_float"></block>
   </category>
-  <category name="Text" colour="#5CA68D">
-    <block type="text_charAt">
-      <mutation at="true"></mutation>
-      <field name="WHERE">FROM_START</field>
-      <value name="VALUE">
-        <block type="variables_get">
-          <field name="VAR" id="|lx_2;f)EoF-b1-*@gu{" variabletype="">text</field>
-        </block>
-      </value>
-    </block>
+  <category name="Text" colour="#5ba58c">
     <block type="text">
       <field name="TEXT"></field>
     </block>
+    <block type="text_join">
+      <mutation items="2"></mutation>
+    </block>
     <block type="text_append">
-      <field name="VAR" id="xw3mRuA|SsM|r51Yd;[g" variabletype="">item</field>
+      <field name="VAR" id="U;BYV{s05HQBt8S)zUs%">item</field>
       <value name="TEXT">
         <shadow type="text">
           <field name="TEXT"></field>
@@ -200,7 +194,7 @@
       <field name="END">FIRST</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="|lx_2;f)EoF-b1-*@gu{" variabletype="">text</field>
+          <field name="VAR" id="ipN-*=0-Kk2hQ:gvr[{6">text</field>
         </block>
       </value>
       <value name="FIND">
@@ -209,8 +203,14 @@
         </shadow>
       </value>
     </block>
-    <block type="text_join">
-      <mutation items="2"></mutation>
+    <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="ipN-*=0-Kk2hQ:gvr[{6">text</field>
+        </block>
+      </value>
     </block>
     <block type="text_getSubstring">
       <mutation at1="true" at2="true"></mutation>
@@ -218,7 +218,7 @@
       <field name="WHERE2">FROM_START</field>
       <value name="STRING">
         <block type="variables_get">
-          <field name="VAR" id="|lx_2;f)EoF-b1-*@gu{" variabletype="">text</field>
+          <field name="VAR" id="ipN-*=0-Kk2hQ:gvr[{6">text</field>
         </block>
       </value>
     </block>
@@ -255,7 +255,75 @@
       </value>
     </block>
   </category>
-  <category name="Color" colour="#A6745C">
+  <category name="Lists" colour="#745ba5">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with">
+      <mutation items="3"></mutation>
+    </block>
+    <block type="lists_repeat">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">5</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getIndex">
+      <mutation statement="false" at="true"></mutation>
+      <field name="MODE">GET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <mutation at="true"></mutation>
+      <field name="MODE">SET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <mutation mode="SPLIT"></mutation>
+      <field name="MODE">SPLIT</field>
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_sort">
+      <field name="TYPE">NUMERIC</field>
+      <field name="DIRECTION">1</field>
+    </block>
+  </category>
+  <category name="Colour" colour="#a5745b">
     <block type="colour_picker">
       <field name="COLOUR">#ff0000</field>
     </block>
@@ -296,190 +364,35 @@
     </block>
   </category>
   <sep></sep>
-  <category name="Block" colour="#5b6da5">
-    <block type="block_definition">
-      <field name="BLOCK">myBlock</field>
-      <field name="NAME">0</field>
+  <category name="Variables" colour="#a55b80" custom="VARIABLE"></category>
+  <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+  <category name="Extension" colour="#9fa55b">
+    <block type="extensionsetup">
+      <field name="extensionname">Name</field>
+      <field name="helptext">Hello!</field>
     </block>
-    <block type="block_inputvalue">
-      <field name="INPUT">1</field>
+    <block type="blockdefinition">
+      <field name="blockname">name</field>
     </block>
-    <block type="block_waitcall"></block>
-    <block type="block_reportcall">
-      <value name="REPORT">
-        <shadow type="text">
-          <field name="TEXT">Hello!</field>
-        </shadow>
-      </value>
+    <block type="blockdescription">
+      <field name="blockname">name</field>
+      <field name="type">stack</field>
     </block>
-    <block type="block_waitreportcall">
-      <value name="REPORT">
-        <shadow type="text">
-          <field name="TEXT">Hello!</field>
-        </shadow>
-      </value>
+    <block type="boolean">
+      <field name="BooleanName">name</field>
     </block>
-    <block type="block_hatcall">
-      <value name="REPORT">
-        <shadow type="logic_boolean">
-          <field name="BOOL">FALSE</field>
-        </shadow>
-      </value>
+    <block type="string">
+      <field name="StringName">name</field>
     </block>
-    <block type="block_boolcall">
-      <value name="REPORT">
-        <shadow type="logic_boolean">
-          <field name="BOOL">FALSE</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="block_describe">
-      <field name="NAME">myBlock</field>
-      <field name="TYPE"> </field>
-      <value name="CONTENT">
-        <block type="content_text">
-          <field name="TEXT">hello</field>
-        </block>
-      </value>
-    </block>
-    <block type="block_separator"></block>
-    <block type="block_menu">
-      <field name="NAME">myMenu</field>
-      <field name="OPTIONS">option1, option2</field>
+    <block type="valueofinput">
+      <field name="valuename">value name</field>
     </block>
   </category>
-  <category name="Inputs" colour="#5ba5a5">
-    <block type="content_text">
-      <field name="TEXT">hello</field>
-    </block>
-    <block type="content_string"></block>
-    <block type="content_num"></block>
-    <block type="content_bool"></block>
-    <block type="content_color"></block>
-    <block type="content_menu">
-      <field name="TYPE">var</field>
-    </block>
-    <block type="block_inputvalue">
-      <field name="INPUT">1</field>
-    </block>
-  </category>
-  <category name="JavaScript" colour="#a5805b">
-    <block type="js_stack">
-      <field name="JS">alert("Hello!")</field>
-    </block>
-    <block type="js_return">
-      <field name="JS">prompt("What's your name?")</field>
-    </block>
-  </category>
-  <sep></sep>
-  <category name="Lists" colour="#745CA6">
-    <block type="lists_indexOf">
-      <field name="END">FIRST</field>
-      <value name="VALUE">
-        <block type="variables_get">
-          <field name="VAR" id="0}V}Ecc(-jYmf?jO0#/r" variabletype="">list</field>
-        </block>
-      </value>
-    </block>
-    <block type="lists_create_with">
-      <mutation items="0"></mutation>
-    </block>
-    <block type="lists_repeat">
-      <value name="NUM">
-        <shadow type="math_number">
-          <field name="NUM">5</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="lists_length"></block>
-    <block type="lists_isEmpty"></block>
-    <block type="lists_create_with">
-      <mutation items="3"></mutation>
-    </block>
-    <block type="lists_getIndex">
-      <mutation statement="false" at="true"></mutation>
-      <field name="MODE">GET</field>
-      <field name="WHERE">FROM_START</field>
-      <value name="VALUE">
-        <block type="variables_get">
-          <field name="VAR" id="0}V}Ecc(-jYmf?jO0#/r" variabletype="">list</field>
-        </block>
-      </value>
-    </block>
-    <block type="lists_setIndex">
-      <mutation at="true"></mutation>
-      <field name="MODE">SET</field>
-      <field name="WHERE">FROM_START</field>
-      <value name="LIST">
-        <block type="variables_get">
-          <field name="VAR" id="0}V}Ecc(-jYmf?jO0#/r" variabletype="">list</field>
-        </block>
-      </value>
-    </block>
-    <block type="lists_getSublist">
-      <mutation at1="true" at2="true"></mutation>
-      <field name="WHERE1">FROM_START</field>
-      <field name="WHERE2">FROM_START</field>
-      <value name="LIST">
-        <block type="variables_get">
-          <field name="VAR" id="0}V}Ecc(-jYmf?jO0#/r" variabletype="">list</field>
-        </block>
-      </value>
-    </block>
-    <block type="lists_split">
-      <mutation mode="SPLIT"></mutation>
-      <field name="MODE">SPLIT</field>
-      <value name="DELIM">
-        <shadow type="text">
-          <field name="TEXT">,</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="lists_sort">
-      <field name="TYPE">NUMERIC</field>
-      <field name="DIRECTION">1</field>
-    </block>
-  </category>
-  <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
-</xml>
-<xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks" style="display:none">
-  <variables></variables>
-  <block type="base" id="?WukoAL-?6bI0J,wmU2(" x="13" y="37">
-    <field name="NAME">My Extension</field>
-    <field name="HELP">Hello!</field>
-    <statement name="DEFINITIONS">
-      <block type="block_definition" id="l/^,L4h^ieI/S`~_S*S^">
-        <field name="BLOCK">myBlock</field>
-        <field name="NAME">0</field>
-        <statement name="CODE">
-          <block type="text_print" id="qs`;#WK-MTB_9_wnF_*Y">
-            <value name="TEXT">
-              <shadow type="text" id="00uVqJBc.MI;]OaP_/;w">
-                <field name="TEXT">Hello!</field>
-              </shadow>
-            </value>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <statement name="DESCRIBE">
-      <block type="block_describe" id="gE)CMavD{T%P[,aK.g+F">
-        <field name="NAME">myBlock</field>
-        <field name="TYPE"> </field>
-        <value name="CONTENT">
-          <block type="content_text" id="zk8]uS7a=CyGb5XK3;eH">
-            <field name="TEXT">hello</field>
-          </block>
-        </value>
-      </block>
-    </statement>
-  </block>
 </xml>
 <script src="./blockly_compressed.js"></script>
 <script src="./blocks_compressed.js"></script>
   <script src="./javascript_compressed.js"></script>
 <script src="./msg/js/en.js"></script>
-  <script src="./definitions.js"></script>
   <script src="./workspace.js"></script>
 <script src="./genorator.js"></script>
 </body>
