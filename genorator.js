@@ -115,7 +115,7 @@ Blockly.JavaScript['extensionsetup'] = function(block) {
   var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
   var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = 'class ' + text_extensionname + ' { ' + ' }';
   return code;
 };
 
