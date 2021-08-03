@@ -166,7 +166,7 @@ Blockly.JavaScript['textcontent'] = function(block) {
   var text_text = block.getFieldValue('text');
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = text_text; value_name;
+  var code = text_text, value_name;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
