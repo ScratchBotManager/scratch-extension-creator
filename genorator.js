@@ -140,16 +140,16 @@ Blockly.JavaScript['boolean'] = function(block) {
   var text_booleanname = block.getFieldValue('BooleanName');
   var value_boolean = Blockly.JavaScript.valueToCode(block, 'boolean', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '<' + text_booleanname + '>';
+  var code = '<' + text_booleanname + '> ' + value_boolean;
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
 
 Blockly.JavaScript['string'] = function(block) {
   var text_stringname = block.getFieldValue('StringName');
-  var value_string = Blockly.JavaScript.valueToCode(block, 'string', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_string = Blockly.JavaScript.valueToCode(block, 'string');
   // TODO: Assemble JavaScript into code variable.
-  var code = '[' + text_stringname + ']';
+  var code = '[' + text_stringname + '] ' + value_string;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -164,7 +164,7 @@ Blockly.JavaScript['valueofinput'] = function(block) {
 
 Blockly.JavaScript['textcontent'] = function(block) {
   var text_text = block.getFieldValue('text');
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = text_text + ' ' + value_name;
   // TODO: Change ORDER_NONE to the correct strength.
