@@ -1,155 +1,150 @@
-Blockly.JavaScript['block_definition'] = function(block) {
-  var text_block = block.getFieldValue('BLOCK');
-  var number_name = block.getFieldValue('NAME');
-  var statements_code = Blockly.JavaScript.statementToCode(block, 'CODE');
+//visuals
+Blockly.Blocks['extensionsetup'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Extension")
+        .appendField(new Blockly.FieldTextInput("Name"), "extensionname");
+    this.appendStatementInput("blocks")
+        .setCheck("Define")
+        .appendField("Define");
+    this.appendStatementInput("details")
+        .setCheck(null)
+        .appendField("Details");
+    this.appendStatementInput("menus")
+        .setCheck(null)
+        .appendField("Menus");
+    this.appendDummyInput()
+        .appendField("Help Text:")
+        .appendField(new Blockly.FieldTextInput("Hello!"), "helptext");
+    this.setInputsInline(false);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['blockdefinition'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("block")
+        .appendField(new Blockly.FieldTextInput("name"), "blockname");
+    this.appendStatementInput("definition")
+        .setCheck(null);
+    this.setPreviousStatement(true, "Define");
+    this.setNextStatement(true, "Define");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['blockdescription'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Name")
+        .appendField(new Blockly.FieldTextInput("name"), "blockname");
+    this.appendDummyInput()
+        .appendField("Type")
+        .appendField(new Blockly.FieldDropdown([["stack","stack"], ["reporter","reporter"], ["boolean","boolean"], ["hat","hat"]]), "type");
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("Content:");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['boolean'] = {
+  init: function() {
+    this.appendValueInput("boolean")
+        .setCheck(null)
+        .appendField("Boolean")
+        .appendField(new Blockly.FieldTextInput("name"), "BooleanName");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['string'] = {
+  init: function() {
+    this.appendValueInput("string")
+        .setCheck(null)
+        .appendField("String")
+        .appendField(new Blockly.FieldTextInput("name"), "StringName");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['valueofinput'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Value Of")
+        .appendField(new Blockly.FieldTextInput("value name"), "valuename");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+//define
+Blockly.JavaScript['extensionsetup'] = function(block) {
+  var text_extensionname = block.getFieldValue('extensionname');
+  var statements_blocks = Blockly.JavaScript.statementToCode(block, 'blocks');
+  var statements_details = Blockly.JavaScript.statementToCode(block, 'details');
+  var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
+  var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var alpha = "abcdefghijklmnopqrstuvwxyz";
-  var params = "";
-  if(number_name > 0){for(var i = 0;i < number_name;i++){params += alpha[i] + ","}};
-  params += "callback"
-  var code = 'ext.'+text_block+' = function (' + params + '){'+statements_code+'};\n';
+  var code = '...;\n';
   return code;
 };
 
-Blockly.JavaScript['block_waitcall'] = function(block) {
+Blockly.JavaScript['blockdefinition'] = function(block) {
+  var text_blockname = block.getFieldValue('blockname');
+  var statements_definition = Blockly.JavaScript.statementToCode(block, 'definition');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'callback();\n';
+  var code = '...;\n';
   return code;
 };
 
-Blockly.JavaScript['block_reportcall'] = function(block) {
-  var value_report = Blockly.JavaScript.valueToCode(block, 'REPORT', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['blockdescription'] = function(block) {
+  var text_blockname = block.getFieldValue('blockname');
+  var dropdown_type = block.getFieldValue('type');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'return '+value_report+';\n';
+  var code = '...;\n';
   return code;
 };
 
-Blockly.JavaScript['block_waitreportcall'] = function(block) {
-  var value_report = Blockly.JavaScript.valueToCode(block, 'REPORT', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['boolean'] = function(block) {
+  var text_booleanname = block.getFieldValue('BooleanName');
+  var value_boolean = Blockly.JavaScript.valueToCode(block, 'boolean', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'callback('+value_report+');\n';
-  return code;
-};
-
-Blockly.JavaScript['block_hatcall'] = function(block) {
-  var value_report = Blockly.JavaScript.valueToCode(block, 'REPORT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = 'callback('+value_report+');\n';
-  return code;
-};
-
-Blockly.JavaScript['block_boolcall'] = function(block) {
-  var value_report = Blockly.JavaScript.valueToCode(block, 'REPORT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = 'callback('+value_report+');\n';
-  return code;
-};
-
-Blockly.JavaScript['block_describe'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  var dropdown_type = block.getFieldValue('TYPE');
-  var value_content = Blockly.JavaScript.valueToCode(block, 'CONTENT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '["'+dropdown_type+'","'+value_content+'","'+text_name+'"],';
-  return code;
-};
-
-Blockly.JavaScript['block_separator'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '["-"],';
-  return code;
-};
-
-Blockly.JavaScript['content_text'] = function(block) {
-  var text_text = block.getFieldValue('TEXT');
-  var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = ' '+text_text + value_next;
+  var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['content_string'] = function(block) {
-  var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['string'] = function(block) {
+  var text_stringname = block.getFieldValue('StringName');
+  var value_string = Blockly.JavaScript.valueToCode(block, 'string', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = ' %s'+value_next;
+  var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['content_num'] = function(block) {
-  var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['valueofinput'] = function(block) {
+  var text_valuename = block.getFieldValue('valuename');
   // TODO: Assemble JavaScript into code variable.
-  var code = ' %n' + value_next;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['content_bool'] = function(block) {
-  var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = ' %b' + value_next;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['content_menu'] = function(block) {
-  var text_type = block.getFieldValue('TYPE');
-  var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = ' %m.' + text_type + value_next;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['block_menu'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  var text_options = block.getFieldValue('OPTIONS');
-  var text = text_options.split(",");
-  var options = "";
-  for(var i = 0;i < text.length;i++){options += '"' + text[i] + '"'};
-  var code = text_name + ': ['+options+']';
-  return code;
-};
-
-Blockly.JavaScript['js_stack'] = function(block) {
-  var text_js = block.getFieldValue('JS');
-  // TODO: Assemble JavaScript into code variable.
-  var code = text_js + "\n";
-  return code;
-};
-
-Blockly.JavaScript['js_return'] = function(block) {
-  var text_js = block.getFieldValue('JS');
-  // TODO: Assemble JavaScript into code variable.
-  var code = text_js + "\n";
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['base'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  var statements_definitions = Blockly.JavaScript.statementToCode(block, 'DEFINITIONS');
-  var statements_describe = Blockly.JavaScript.statementToCode(block, 'DESCRIBE');
-  var statements_menus = Blockly.JavaScript.statementToCode(block, 'MENUS');
-  var text_help = block.getFieldValue('HELP');
-  // TODO: Assemble JavaScript into code variable.
-  var code = "ext._shutdown = function() {};ext._getStatus = function() {    return {status: 2, msg: 'Ready'};};"+statements_definitions+"  var descriptor = {   blocks: ["+statements_describe+"],menus: {"+statements_menus+"},url: 'https://kyleplo.github.io/scratch-extension-creator/help#'" + text_help + "};ScratchExtensions.register('"+text_name+"', descriptor, ext);";
-  return code;
-};
-
-Blockly.JavaScript['content_color'] = function(block) {
-  var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = ' %c' + value_next;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['block_inputvalue'] = function(block) {
-  var number_input = block.getFieldValue('INPUT');
-  var alpha = "abcdefghijklmnopqrstuvwxyz";
-  var code = alpha[number_input];
+  var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
