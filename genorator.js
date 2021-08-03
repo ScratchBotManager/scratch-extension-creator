@@ -115,7 +115,8 @@ Blockly.JavaScript['extensionsetup'] = function(block) {
   var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
   var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'class ' + text_extensionname + ' { ' + ' }';
+  var code = 'class ' + text_extensionname + ' {      getInfo() {       return {
+            "id": text_extensionname,' + ' } Scratch.extensions.register(new CustomJSBlocks());';
   return code;
 };
 
