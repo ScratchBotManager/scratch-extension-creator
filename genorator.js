@@ -233,6 +233,6 @@ Blockly.JavaScript['argument'] = function(block) {
 Blockly.JavaScript['javascript'] = function(block) {
   var text_js = block.getFieldValue('js');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = text_js;
   return code;
 };
