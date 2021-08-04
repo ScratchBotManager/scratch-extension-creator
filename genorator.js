@@ -164,7 +164,7 @@ Blockly.JavaScript['extensionsetup'] = function(block) {
   var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
   var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'class ' + text_extensionname + ' {   constructor() {}    getInfo() { return { "id": "' + text_extensionname + '", "name": "' + text_extensionname + '" "blocks":[' + statements_details + ']}, "menus":{}}; "Define Blocks Here" }; } Scratch.extensions.register(new ' + text_extensionname + '());';
+  var code = 'class ' + text_extensionname + ' {   constructor() {}    getInfo() { return { id: "' + text_extensionname + '", name: "' + text_extensionname + '", blocks:[' + statements_details + ']}, "menus":{}}; "Define Blocks Here" }; } Scratch.extensions.register(new ' + text_extensionname + '());';
   return code;
 };
 
@@ -182,7 +182,7 @@ Blockly.JavaScript['blockdescription'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var value_arguments = Blockly.JavaScript.valueToCode(block, 'arguments', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '{ opcode: "' + text_blockname + '", blocktype: Scratch.BlockType.' + dropdown_type + ', text:"' + value_name + '", "arguments":{ ' + value_arguments +' }},';
+  var code = '{ opcode: "' + text_blockname + '", blocktype: Scratch.BlockType.' + dropdown_type + ', text:"' + value_name + '", arguments: { ' + value_arguments +' }},';
   return code;
 };
 
