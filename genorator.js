@@ -115,7 +115,7 @@ Blockly.JavaScript['extensionsetup'] = function(block) {
   var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
   var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'class ' + text_extensionname + ' {     getInfo() { "id": ' + text_extensionname + ', "name":' + text_extensionname + ' };} Scratch.extensions.register(new ' + text_extensionname + '());';
+  var code = 'class ' + text_extensionname + ' {     getInfo() { "id": ' + text_extensionname + ', "name":' + text_extensionname + ' "blocks":[] };} Scratch.extensions.register(new ' + text_extensionname + '());';
   return code;
 };
 
@@ -132,7 +132,7 @@ Blockly.JavaScript['blockdescription'] = function(block) {
   var dropdown_type = block.getFieldValue('type');
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '{"opcode":' + text_blockname + '}';
   return code;
 };
 
