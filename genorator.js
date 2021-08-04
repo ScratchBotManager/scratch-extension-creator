@@ -132,7 +132,7 @@ Blockly.JavaScript['blockdescription'] = function(block) {
   var dropdown_type = block.getFieldValue('type');
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '{"opcode":' + text_blockname + ', "blocktype":' + dropdown_type + '}';
+  var code = '{"opcode":"' + text_blockname + '", "blocktype":"' + dropdown_type + '"}';
   return code;
 };
 
