@@ -1,18 +1,35 @@
 //visuals
-Blockly.JavaScript['argument'] = function(block) {
-  var dropdown_type = block.getFieldValue('type');
-  var text_value = block.getFieldValue('value');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+Blockly.Blocks['argument'] = {
+  init: function() {
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("Argument")
+        .appendField(new Blockly.FieldTextInput("Name"), "name");
+    this.appendDummyInput()
+        .appendField("Type")
+        .appendField(new Blockly.FieldDropdown([["number","number"], ["string","string"], ["boolean","boolean"]]), "type");
+    this.appendDummyInput()
+        .appendField("Value")
+        .appendField(new Blockly.FieldTextInput("1"), "value");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
 };
 
-Blockly.JavaScript['javascript'] = function(block) {
-  var text_js = block.getFieldValue('js');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+
+Blockly.Blocks['javascript'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Javascript")
+        .appendField(new Blockly.FieldTextInput("alert(\"Hello World\")"), "js");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
 };
 
 Blockly.Blocks['javascript'] = {
@@ -204,6 +221,7 @@ Blockly.JavaScript['textcontent'] = function(block) {
 };
 Blockly.JavaScript['argument'] = function(block) {
   var text_name = block.getFieldValue('name')
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME')
   var dropdown_type = block.getFieldValue('type');
   var text_value = block.getFieldValue('value');
   // TODO: Assemble JavaScript into code variable.
