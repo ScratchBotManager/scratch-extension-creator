@@ -1,4 +1,32 @@
 //visuals
+Blockly.JavaScript['argument'] = function(block) {
+  var dropdown_type = block.getFieldValue('type');
+  var text_value = block.getFieldValue('value');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['javascript'] = function(block) {
+  var text_js = block.getFieldValue('js');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.Blocks['javascript'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Javascript")
+        .appendField(new Blockly.FieldTextInput("alert(\"Hello World\")"), "js");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 Blockly.Blocks['extensionsetup'] = {
   init: function() {
     this.appendDummyInput()
@@ -118,7 +146,7 @@ Blockly.JavaScript['extensionsetup'] = function(block) {
   var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
   var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'class ' + text_extensionname + ' {     getInfo() { "id": ' + text_extensionname + ', "name":' + text_extensionname + ' "blocks":[' + statements_details + '] };} Scratch.extensions.register(new ' + text_extensionname + '());';
+  var code = 'class ' + text_extensionname + ' {     getInfo() { return { "id": ' + text_extensionname + ', "name":' + text_extensionname + ' "blocks":[' + statements_details + ']}, "menus":{}}; Scratch.extensions.register(new ' + text_extensionname + '());';
   return code;
 };
 
@@ -136,7 +164,7 @@ Blockly.JavaScript['blockdescription'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var value_arguments = Blockly.JavaScript.valueToCode(block, 'arguments', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '{"opcode":"' + text_blockname + '", "blocktype":"' + dropdown_type + '", "text":"' + value_name + '"}';
+  var code = '{"opcode":"' + text_blockname + '", "blocktype":"' + dropdown_type + '", "text":"' + value_name + '", "arguments":{ ' + value_arguments +' }},';
   return code;
 };
 
@@ -172,5 +200,21 @@ Blockly.JavaScript['textcontent'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = text_text + ' ' + value_name;
   // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+Blockly.JavaScript['argument'] = function(block) {
+  var text_name = block.getFieldValue('name')
+  var dropdown_type = block.getFieldValue('type');
+  var text_value = block.getFieldValue('value');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '"' + text_name + '":';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['javascript'] = function(block) {
+  var text_js = block.getFieldValue('js');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
   return code;
 };
