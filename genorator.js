@@ -192,7 +192,7 @@ Blockly.JavaScript['boolean'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '<' + text_booleanname + '> ' + value_boolean;
   // TODO: Change ORDER_NONE to the correct strength.
-  return code;
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['string'] = function(block) {
@@ -218,7 +218,7 @@ Blockly.JavaScript['textcontent'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = text_text + ' ' + value_name;
   // TODO: Change ORDER_NONE to the correct strength.
-  return code;
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 Blockly.JavaScript['argument'] = function(block) {
   var text_name = block.getFieldValue('name')
