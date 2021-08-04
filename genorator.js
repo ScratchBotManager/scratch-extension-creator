@@ -8,7 +8,7 @@ Blockly.Blocks['argument'] = {
         .appendField(new Blockly.FieldTextInput("Name"), "name");
     this.appendDummyInput()
         .appendField("Type")
-        .appendField(new Blockly.FieldDropdown([["number","NUMBER"], ["string","STRING"], ["boolean","BOOLEAN"]]), "type");
+        .appendField(new Blockly.FieldDropdown([["NUMBER","NUMBER"], ["STRING","STRING"], ["BOOLEAN","BOOLEAN"]]), "type");
     this.appendDummyInput()
         .appendField("Value")
         .appendField(new Blockly.FieldTextInput("1"), "value");
@@ -91,7 +91,7 @@ Blockly.Blocks['blockdescription'] = {
         .appendField(new Blockly.FieldTextInput("name"), "blockname");
     this.appendDummyInput()
         .appendField("Type")
-        .appendField(new Blockly.FieldDropdown([["stack","STACK"], ["reporter","REPORTER"], ["boolean","BOOLEAN"], ["hat","HAT"]]), "type");
+        .appendField(new Blockly.FieldDropdown([["STACK","STACK"], ["REPORTER","REPORTER"], ["BOOLEAN","BOOLEAN"], ["HAT","HAT"]]), "type");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("Content:");
