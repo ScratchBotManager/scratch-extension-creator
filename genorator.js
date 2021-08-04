@@ -49,6 +49,9 @@ Blockly.Blocks['blockdescription'] = {
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("Content:");
+    this.appendValueInput("arguments")
+        .setCheck(null)
+        .appendField("Arguments");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -131,6 +134,7 @@ Blockly.JavaScript['blockdescription'] = function(block) {
   var text_blockname = block.getFieldValue('blockname');
   var dropdown_type = block.getFieldValue('type');
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_arguments = Blockly.JavaScript.valueToCode(block, 'arguments', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '{"opcode":"' + text_blockname + '", "blocktype":"' + dropdown_type + '", "text":"' + value_name + '"}';
   return code;
