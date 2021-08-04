@@ -225,9 +225,9 @@ Blockly.JavaScript['argument'] = function(block) {
   var dropdown_type = block.getFieldValue('type');
   var text_value = block.getFieldValue('value');
   // TODO: Assemble JavaScript into code variable.
-  var code = '"' + text_name + '":';
+  var code = '"' + text_name + '": { "type": "' + dropdown_type + '", "defaultValue":"' + text_value + '"}';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return code;
 };
 
 Blockly.JavaScript['javascript'] = function(block) {
