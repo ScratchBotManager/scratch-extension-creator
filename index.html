@@ -37,7 +37,7 @@
       <field name="MODE">WHILE</field>
     </block>
     <block type="controls_for">
-      <field name="VAR" id="[,yQ!M(`.$|Vi5*Pb}Mb">i</field>
+      <field name="VAR" id="6@.^fD8-aNs)0~ca/dob">i</field>
       <value name="FROM">
         <shadow type="math_number">
           <field name="NUM">1</field>
@@ -55,7 +55,7 @@
       </value>
     </block>
     <block type="controls_forEach">
-      <field name="VAR" id="Xp~L8i62%t_tQXZ/S0L_">j</field>
+      <field name="VAR" id="~R,aQ+RNO0fQ.q)b53BJ">j</field>
     </block>
     <block type="controls_flow_statements">
       <field name="FLOW">BREAK</field>
@@ -169,7 +169,7 @@
       <mutation items="2"></mutation>
     </block>
     <block type="text_append">
-      <field name="VAR" id="U;BYV{s05HQBt8S)zUs%">item</field>
+      <field name="VAR" id="1:_@|3E1@?64ys6(59Kg">item</field>
       <value name="TEXT">
         <shadow type="text">
           <field name="TEXT"></field>
@@ -194,7 +194,7 @@
       <field name="END">FIRST</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="ipN-*=0-Kk2hQ:gvr[{6">text</field>
+          <field name="VAR" id="4D-V7!F},8vRcw+O?-ko">text</field>
         </block>
       </value>
       <value name="FIND">
@@ -208,7 +208,7 @@
       <field name="WHERE">FROM_START</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="ipN-*=0-Kk2hQ:gvr[{6">text</field>
+          <field name="VAR" id="4D-V7!F},8vRcw+O?-ko">text</field>
         </block>
       </value>
     </block>
@@ -218,7 +218,7 @@
       <field name="WHERE2">FROM_START</field>
       <value name="STRING">
         <block type="variables_get">
-          <field name="VAR" id="ipN-*=0-Kk2hQ:gvr[{6">text</field>
+          <field name="VAR" id="4D-V7!F},8vRcw+O?-ko">text</field>
         </block>
       </value>
     </block>
@@ -275,7 +275,7 @@
       <field name="END">FIRST</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+          <field name="VAR" id="sXsv%~x+U2.EU]fV=M@b">list</field>
         </block>
       </value>
     </block>
@@ -285,7 +285,7 @@
       <field name="WHERE">FROM_START</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+          <field name="VAR" id="sXsv%~x+U2.EU]fV=M@b">list</field>
         </block>
       </value>
     </block>
@@ -295,7 +295,7 @@
       <field name="WHERE">FROM_START</field>
       <value name="LIST">
         <block type="variables_get">
-          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+          <field name="VAR" id="sXsv%~x+U2.EU]fV=M@b">list</field>
         </block>
       </value>
     </block>
@@ -305,7 +305,7 @@
       <field name="WHERE2">FROM_START</field>
       <value name="LIST">
         <block type="variables_get">
-          <field name="VAR" id="M8tnE,/lLreYbW$OmBhF">list</field>
+          <field name="VAR" id="sXsv%~x+U2.EU]fV=M@b">list</field>
         </block>
       </value>
     </block>
@@ -370,13 +370,19 @@
     <block type="extensionsetup">
       <field name="extensionname">Name</field>
       <field name="helptext">Hello!</field>
+      <statement name="menus">
+        <shadow type="text_print">
+          <value name="TEXT">
+            <shadow type="text">
+              <field name="TEXT">Not Worked On Yet, Sorry.</field>
+            </shadow>
+          </value>
+        </shadow>
+      </statement>
     </block>
-    <block type="blockdefinition">
-      <field name="blockname">name</field>
-    </block>
-    <block type="blockdescription">
-      <field name="blockname">name</field>
-      <field name="type">stack</field>
+    <block type="argument">
+      <field name="type">number</field>
+      <field name="value">1</field>
     </block>
     <block type="boolean">
       <field name="BooleanName">name</field>
@@ -387,8 +393,20 @@
     <block type="valueofinput">
       <field name="valuename">value name</field>
     </block>
+    <block type="blockdefinition">
+      <field name="blockname">name</field>
+    </block>
     <block type="textcontent">
       <field name="text">text</field>
+    </block>
+    <block type="blockdescription">
+      <field name="blockname">name</field>
+      <field name="type">stack</field>
+    </block>
+  </category>
+  <category name="Javascript" colour="#5ba55b">
+    <block type="javascript">
+      <field name="js">alert("Hello World")</field>
     </block>
   </category>
 </xml>
