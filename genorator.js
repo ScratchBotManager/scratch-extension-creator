@@ -182,7 +182,7 @@ Blockly.JavaScript['blockdescription'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var value_arguments = Blockly.JavaScript.valueToCode(block, 'arguments', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '{ opcode: "' + text_blockname + '", blocktype: Scratch.BlockType.' + dropdown_type + ', "text":"' + value_name + '", "arguments":{ ' + value_arguments +' }},';
+  var code = '{ opcode: "' + text_blockname + '", blocktype: Scratch.BlockType.' + dropdown_type + ', text:"' + value_name + '", "arguments":{ ' + value_arguments +' }},';
   return code;
 };
 
@@ -226,7 +226,7 @@ Blockly.JavaScript['argument'] = function(block) {
   var dropdown_type = block.getFieldValue('type');
   var text_value = block.getFieldValue('value');
   // TODO: Assemble JavaScript into code variable.
-  var code = '"' + text_name + '": { type: Scratch.ArgumentType.' + dropdown_type + ', "defaultValue":"' + text_value + '"},' + value_name;
+  var code = '"' + text_name + '": { type: Scratch.ArgumentType.' + dropdown_type + ', defaultValue: ' + text_value + '},' + value_name;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
