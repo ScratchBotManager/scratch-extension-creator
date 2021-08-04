@@ -123,7 +123,7 @@ Blockly.JavaScript['blockdefinition'] = function(block) {
   var text_blockname = block.getFieldValue('blockname');
   var statements_definition = Blockly.JavaScript.statementToCode(block, 'definition');
   // TODO: Assemble JavaScript into code variable.
-  var code = ;
+  var code = null;
   return code;
 };
 
