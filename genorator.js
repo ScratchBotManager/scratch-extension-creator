@@ -226,7 +226,7 @@ Blockly.JavaScript['argument'] = function(block) {
   var dropdown_type = block.getFieldValue('type');
   var text_value = block.getFieldValue('value');
   // TODO: Assemble JavaScript into code variable.
-  var code = '' + text_name + ': { type: Scratch.ArgumentType.' + dropdown_type + ', defaultValue: ' + text_value + '},' + value_name;
+  var code = '"' + text_name + '": { type: Scratch.ArgumentType.' + dropdown_type + ', defaultValue: ' + text_value + '},' + value_name;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
