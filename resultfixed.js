@@ -1,1 +1,4 @@
-class Name { constructor() {} getInfo() { return { id: 'Name', name: 'Name', blocks:[ { opcode: 'AlertBlock', blocktype: Scratch.BlockType.stack, text:'Alert [Alert]', arguments: { Alert: { type: Scratch.ArgumentType.STRING, defaultValue: Hello} } ]}, 'menus':{}}; AlertBlock({Alert}) { return alert(Alert) }}; } Scratch.extensions.register(new Name());
+var TestExtension = function () {}; TestExtension.prototype.getInfo = function () { return { id:"TestExtension", name:"TestExtension" blocks:[ { opcode: "alert", blocktype: Scratch.BlockType.COMMAND, text:"Alert [alertname]", arguments: { alertname: { type: Scratch.ArgumentType.STRING, defaultValue: Hello World}}] }
+ExampleExtension.prototype.alert = function (args) {
+alert(args.alertname);
+};} Scratch.extensions.register(new TestExtension());
