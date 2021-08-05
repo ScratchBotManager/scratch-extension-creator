@@ -91,7 +91,7 @@ Blockly.Blocks['blockdescription'] = {
         .appendField(new Blockly.FieldTextInput("name"), "blockname");
     this.appendDummyInput()
         .appendField("Type")
-        .appendField(new Blockly.FieldDropdown([["STACK","STACK"], ["REPORTER","REPORTER"], ["BOOLEAN","BOOLEAN"], ["HAT","HAT"]]), "type");
+        .appendField(new Blockly.FieldDropdown([["COMMAND","COMMAND"], ["REPORTER","REPORTER"], ["BOOLEAN","BOOLEAN"], ["HAT","HAT"]]), "type");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("Content:");
