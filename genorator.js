@@ -50,8 +50,8 @@ Blockly.Blocks['extensionsetup'] = {
     this.appendDummyInput()
         .appendField("Extension")
         .appendField(new Blockly.FieldTextInput("Name"), "extensionname");
-        this.appendDummyInput()
-        .appentField("Color")
+    this.appendDummyInput()
+        .appendField("Color")
         .appendField(new Blockly.FieldColour("#009900"), "color");
     this.setColour(230);
     this.appendStatementInput("blocks")
