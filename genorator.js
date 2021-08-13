@@ -50,6 +50,7 @@ Blockly.Blocks['extensionsetup'] = {
     this.appendDummyInput()
         .appendField("Extension")
         .appendField(new Blockly.FieldTextInput("Name"), "extensionname");
+        .appendField(new Blockly.FieldColour("#ff0000"), "color");
     this.appendStatementInput("blocks")
         .setCheck("Define")
         .appendField("Define");
@@ -159,12 +160,13 @@ Blockly.Blocks['textcontent'] = {
 //define
 Blockly.JavaScript['extensionsetup'] = function(block) {
   var text_extensionname = block.getFieldValue('extensionname');
+  var colour_name = block.getFieldValue('color');
   var statements_blocks = Blockly.JavaScript.statementToCode(block, 'blocks');
   var statements_details = Blockly.JavaScript.statementToCode(block, 'details');
   var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
   var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'var '+ text_extensionname +' = function () {}; '+ text_extensionname +'.prototype.getInfo = function ()  {   return { id:"'+ text_extensionname +'", name:"'+ text_extensionname +'" blocks:['+ statements_details +'] }} Scratch.extensions.register(new '+ text_extensionname +'());';
+  var code = "class "+ text_extensionname +" {  constructor() {}  getInfo() { return { id: '"+ text_extensionname +"', name: '"+ text_extensionname +"',  color1: '"+  +"' }}}";
   return code;
 };
 
