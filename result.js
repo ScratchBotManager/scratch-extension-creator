@@ -1,1 +1,1 @@
-var TestExtension = function () {}; TestExtension.prototype.getInfo = function () { return { id:"TestExtension", name:"TestExtension" blocks:[ { opcode: "alert", blocktype: Scratch.BlockType.STACK, text:"(Alert [alertname] )", arguments: { (alertname: { type: Scratch.ArgumentType.STRING, defaultValue: Hello World},) }},] }} Scratch.extensions.register(new TestExtension());
+class Test { constructor() {} getInfo() { return { id: 'Test', name: 'Test', color1: '#FF2D00', blocks: }}} Scratch.extensions.register(new Test());
