@@ -52,8 +52,7 @@ Blockly.Blocks['extensionsetup'] = {
         .appendField(new Blockly.FieldTextInput("Name"), "extensionname");
     this.appendDummyInput()
         .appendField("Color")
-        .appendField(new Blockly.FieldColour("#009900"), "color");
-    this.setColour(230);
+        .appendField(new Blockly.FieldTextInput("hex code"), "color");
     this.appendStatementInput("blocks")
         .setCheck("Define")
         .appendField("Define");
