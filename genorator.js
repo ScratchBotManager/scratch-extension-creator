@@ -109,19 +109,6 @@ Blockly.Blocks['blockdescription'] = {
   }
 };
 
-Blockly.Blocks['boolean'] = {
-  init: function() {
-    this.appendValueInput("boolean")
-        .setCheck(null)
-        .appendField("Boolean")
-        .appendField(new Blockly.FieldTextInput("name"), "BooleanName");
-    this.setOutput(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 Blockly.Blocks['string'] = {
   init: function() {
     this.appendValueInput("string")
@@ -186,17 +173,8 @@ Blockly.JavaScript['blockdescription'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var value_arguments = Blockly.JavaScript.valueToCode(block, 'arguments', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '{ opcode: "' + text_blockname + '", blocktype: Scratch.BlockType.' + dropdown_type + ', text:"' + value_name + '", arguments: { ' + value_arguments +' }},';
+  var code = "{ opcode: '" + text_blockname + "', blocktype: Scratch.BlockType." + dropdown_type + "', text:'" + value_name + "', arguments: { "+ value_arguments +" }},";
   return code;
-};
-
-Blockly.JavaScript['boolean'] = function(block) {
-  var text_booleanname = block.getFieldValue('BooleanName');
-  var value_boolean = Blockly.JavaScript.valueToCode(block, 'boolean', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '<' + text_booleanname + '> ' + value_boolean;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['string'] = function(block) {
