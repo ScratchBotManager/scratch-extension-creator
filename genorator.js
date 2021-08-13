@@ -163,13 +163,13 @@ Blockly.Blocks['textcontent'] = {
 //define
 Blockly.JavaScript['extensionsetup'] = function(block) {
   var text_extensionname = block.getFieldValue('extensionname');
-  var colour_name = block.getFieldValue('color');
+  var color = block.getFieldValue('color');
   var statements_blocks = Blockly.JavaScript.statementToCode(block, 'blocks');
   var statements_details = Blockly.JavaScript.statementToCode(block, 'details');
   var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
   var text_helptext = block.getFieldValue('helptext');
   // TODO: Assemble JavaScript into code variable.
-  var code = "class "+ text_extensionname +" {  constructor() {}  getInfo() { return { id: '"+ text_extensionname +"', name: '"+ text_extensionname +"',  color1: '"+  +"' }}}";
+  var code = "class "+ text_extensionname +" {  constructor() {}  getInfo() { return { id: '"+ text_extensionname +"', name: '"+ text_extensionname +"',  color1: '"+ colour_color +"' }}}";
   return code;
 };
 
