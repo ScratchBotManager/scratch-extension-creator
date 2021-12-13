@@ -1,4 +1,7 @@
-var TestExtension = function () {}; TestExtension.prototype.getInfo = function () { return { id:"TestExtension", name:"TestExtension" blocks:[ { opcode: "alert", blocktype: Scratch.BlockType.COMMAND, text:"Alert [alertname]", arguments: { alertname: { type: Scratch.ArgumentType.STRING, defaultValue: Hello World}}] }
-ExampleExtension.prototype.alert = function (args) {
-alert(args.alertname);
-};} Scratch.extensions.register(new TestExtension());
+class test implements ScratchExtension { getInfo(): ExtensionMetadata { return { id: 'test', name: 'test', color1: '33cc33', blocks: { opcode: 'test', blocktype: Scratch.BlockType.REPORTER, text:'test', arguments: { }},}}
+
+	test({}: {}): {
+		return `Hello World`
+	}
+
+} Scratch.extensions.register(new test());
