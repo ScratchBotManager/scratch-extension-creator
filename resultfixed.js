@@ -7,12 +7,13 @@ class test implements ScratchExtension {
 			blocks: [{ 
 				opcode: 'test', 
 				blocktype: Scratch.BlockType.REPORTER, 
-				text:'test [name]'
+				text:'test [name]',
 				arguments: {
 					name: {
 						type: Scratch.ArgumentType.STRING,
 						defaultValue: "Test"
 					}
+				}
 			}]
 				}
 			}
