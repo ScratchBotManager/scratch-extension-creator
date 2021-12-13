@@ -5,8 +5,7 @@ class test implements ScratchExtension {
 	getInfo(): ExtensionMetadata { 
 		return { 
 			id: 'test', 
-			name: 'test', 
-			color1: '33cc33', 
+			name: 'test',  
 			blocks: [{ 
 				opcode: 'test', 
 				blocktype: Scratch.BlockType.REPORTER, 
