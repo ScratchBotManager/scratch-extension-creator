@@ -1,4 +1,5 @@
-I Give Up
+# NEWS
+We Are Back At It Again
 
 # What?
 Recreated For Scratch 3
