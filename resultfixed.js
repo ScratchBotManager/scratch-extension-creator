@@ -1,3 +1,6 @@
+/* global Scratch */
+/// <reference types="scratch-env"/>
+
 class test implements ScratchExtension {
 	getInfo(): ExtensionMetadata { 
 		return { 
