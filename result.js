@@ -1,1 +1,1 @@
-class Test { constructor() {} getInfo() { return { id: 'Test', name: 'Test', color1: '#FF2D00', blocks: }}} Scratch.extensions.register(new Test());
+class test implements ScratchExtension { getInfo(): ExtensionMetadata { return { id: 'test', name: 'test', color1: '33cc33', blocks: { opcode: 'name', blocktype: Scratch.BlockType.REPORTER', text:'([Test] )', arguments: { }},}}} Scratch.extensions.register(new test());
