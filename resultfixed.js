@@ -24,4 +24,6 @@ class test implements ScratchExtension {
 		return `Hello World`
 	}
 
-} Scratch.extensions.register(new test());
+}
+
+Scratch.extensions.register(new test())
